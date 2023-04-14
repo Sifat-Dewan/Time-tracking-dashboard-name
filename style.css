@@ -1,0 +1,346 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+
+:root {
+    --card-clr: hsl(235, 46%, 20%);
+    --card-clr-hover: hsl(235, 45%, 61%);
+    --color: hsl(236, 100%, 87%);
+    --work: hsl(15, 100%, 70%);
+    --play: hsl(195, 74%, 62%);
+    --study: hsl(348, 100%, 68%);
+    --exercise: hsl(145, 58%, 55%);
+    --social: hsl(264, 64%, 52%);
+    --selfcare: hsl(43, 84%, 65%);
+    --font: 18px;
+    --font-family: 'Rubik';
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 500ms ease;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+span,
+img {
+    display: block;
+    object-fit: contain;
+}
+
+#root,
+#__next {
+    isolation: isolate;
+}
+
+body {
+    background-color: hsl(226, 43%, 10%);
+    width: 100vw;
+    max-width: 1440px;
+    display: grid;
+    align-items: center;
+    font-family: 'Rubik', serif;
+    font-size: 18px;
+    overflow-x: hidden;
+}
+
+.container {
+    color: white;
+    height: 75%;
+    width: 75%;
+    margin: auto;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "hero work play study"
+        "hero exercise social selfcare";
+}
+
+.hero {
+    border: 0;
+    text-align: left;
+    font: inherit;
+    color: inherit;
+    grid-area: hero;
+    background-color: hsl(246, 80%, 60%);
+    border-radius: 12px;
+    height: 70%;
+    position: relative;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.hero:focus .date,
+.hero:hover .date {
+    transform: scaleY(1);
+}
+
+.report {
+    font-size: 14px;
+
+}
+
+.title {
+    font-size: 2rem;
+}
+
+.hero>.hero-image {
+    width: 80px;
+    aspect-ratio: 2/2;
+    border: 3px solid white;
+    border-radius: 50px;
+}
+
+.date {
+    position: absolute;
+    transform: scaleY(0);
+    transform-origin: top;
+    width: 100%;
+    border-radius: 12px;
+    bottom: -130px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: var(--card-clr);
+    left: 0;
+    padding: 1.5rem;
+    z-index: -1;
+    font-size: 16px;
+}
+
+.dates {
+    color: var(--card-clr-hover);
+}
+
+.dates:hover {
+    color: white;
+}
+
+.work {
+    grid-area: work;
+    border-radius: 12px;
+    background-color: var(--card-clr);
+}
+
+.play {
+    border-radius: 12px;
+    grid-area: play;
+    background-color: var(--card-clr);
+}
+
+.study {
+    grid-area: study;
+    border-radius: 12px;
+    background-color: var(--card-clr);
+
+}
+
+.exercise {
+    grid-area: exercise;
+    background-color: var(--card-clr);
+    border-radius: 12px;
+}
+
+.social {
+    grid-area: social;
+    border-radius: 12px;
+    background-color: var(--card-clr);
+}
+
+.selfcare {
+    grid-area: selfcare;
+    background-color: var(--card-clr);
+    border-radius: 12px;
+
+}
+
+.container:hover .head {
+    transform: scaleY(1);
+}
+
+.work,
+.study,
+.play,
+.selfcare,
+.exercise,
+.social {
+    position: relative;
+    height: 80%;
+    top: 2.5rem;
+    padding: 1rem;
+
+}
+
+.card:hover {
+    background-color: var(--card-clr-hover);
+}
+
+.head {
+    position: absolute;
+    left: 0;
+    height: 40%;
+    width: 100%;
+    border-radius: 12px;
+    display: flex;
+    justify-content: flex-end;
+    z-index: -1;
+    top: -2.5rem;
+    transform: scaleY(0);
+    transform-origin: bottom;
+
+}
+
+.image {
+    position: absolute;
+    width: 50px;
+    margin-left: auto;
+}
+
+.first {
+    background-color: var(--work);
+}
+
+.second {
+    background-color: var(--play);
+}
+
+.third {
+    background-color: var(--study);
+}
+
+.forth {
+    background-color: var(--exercise)
+}
+
+.fifth {
+    background-color: var(--social);
+}
+
+.sixth {
+    background-color: var(--selfcare);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 500;
+}
+
+.time {
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+}
+
+.time-large {
+    font-size: 3rem;
+    font-weight: 300;
+}
+
+.last {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--color);
+}
+
+@media screen and (max-width:600px) {
+    .container {
+        color: white;
+        border: 2px solid yellow;
+        height: 90%;
+        padding-bottom: 4rem;
+        width: 95%;
+        align-self: center;
+        margin-bottom: 100px;
+        display: grid;
+        gap: 3rem;
+        grid-template-columns: 1fr;
+        grid-template-areas: "hero" "work" "play" "study" "exercise" "social" "selfcare";
+    }
+
+    .hero {
+        padding: 3rem 1.5rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .date {
+        transform: scaleY(1);
+        height: 60%;
+        border-radius: 0 0 12px 12px;
+        bottom: -60px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .work,
+    .study,
+    .play,
+    .selfcare,
+    .exercise,
+    .social {
+        top: 2.5rem;
+        padding: 1rem 1rem 2.5rem 1rem;
+    }
+
+    .head {
+        height: 50%;
+        width: 100%;
+        border-radius: 12px 12px 0 0;
+        display: flex;
+        justify-content: flex-end;
+        z-index: -1;
+        top: -2rem;
+        transform: scaleY(1);
+        transform-origin: bottom;
+
+    }
+
+    .time {
+        display: flex;
+        gap: 5px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .time-large {
+        font-size: 2rem;
+    }
+}
