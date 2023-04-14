@@ -275,7 +275,6 @@ body {
 @media screen and (max-width:600px) {
     .container {
         color: white;
-        border: 2px solid yellow;
         height: 90%;
         padding-bottom: 4rem;
         width: 95%;
